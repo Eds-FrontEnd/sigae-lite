@@ -17,18 +17,12 @@ Antes de começar, certifique-se de ter o Node.js e o npm instalados em seu ambi
 
 ## Instalação
 
-1. Baixe o projeto em arquivo zip para seu ambiente local e
-navegue até a pasta do projeto:
-
-   ```bash
-   cd siage
-      
-2. Instale as dependências necessárias do projeto utilizando npm:
+1. Instale as dependências necessárias do projeto utilizando npm:
 
    ```bash
    npm install
       
-3. Para iniciar o servidor de desenvolvimento do Angular e visualizar o projeto:
+2. Para iniciar o servidor de desenvolvimento do Angular e visualizar o projeto:
 
    ```bash
    ng serve
