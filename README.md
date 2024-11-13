@@ -1,6 +1,6 @@
 # ⚡ Projeto
 ## 🚀 Bem-vindo ao projeto Software Sigae Lite! 
-### Este é um projeto simples de blog desenvolvido em Angular. 
+### Este é um projeto desenvolvido em Angular. 
 ## Pré-requisitos
 
 Antes de começar, certifique-se de ter o Node.js e o npm instalados em seu ambiente de desenvolvimento.
