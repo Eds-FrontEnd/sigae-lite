@@ -1,0 +1,125 @@
+.page-login {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .page-login__box {
+    width: 296px;
+    height: 289px;
+    background-color: var(--white);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    form {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      h1 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--gray-dark);
+      }
+
+      button {
+        width: 80px;
+        height: 40px;
+        background-color: var(--blue);
+        color: var(--white);
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:active {
+          position: relative;
+          top: 1px;
+        }
+      }
+
+      .page-login__inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        mat-icon {
+          position: absolute;
+          top: 55px;
+          right: 10px;
+          cursor: pointer;
+          color: var(--gray-dark);
+        }
+
+        button {
+          line-height: 10px;
+        }
+
+        app-input#login-email,
+        app-input#login-password {
+          input {
+            width: 216px;
+          }
+        }
+      }
+    }
+  }
+
+  img {
+    position: absolute;
+  }
+}
+
+#password {
+  position: relative;
+}
+
+app-logo {
+  img {
+    padding: 22px !important;
+  }
+}
+
+#recaptcha-sum {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background: var(--white);
+  width: 295px;
+  height: 120px;
+
+  label {
+    font-size: 14px;
+  }
+
+  #captcha {
+    text-align: center;
+    border: 2px solid var(--gray);
+    padding: 7px 0px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: none;
+  }
+
+  .error-message {
+    span {
+      color: var(--red);
+      font-size: 12px;
+    }
+  }
+}

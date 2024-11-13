@@ -1,0 +1,139 @@
+app-timeline {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+form {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 10vw;
+
+  .input-contact {
+    display: flex;
+    justify-content: flex-start;
+    align-items: self-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .registration-data__info {
+    width: 80vw;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+
+    @media screen and (max-width: 992px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    input,
+    select#school {
+      width: 40vw;
+      min-width: 291px;
+      padding: 0 15px;
+    }
+  }
+
+  input,
+  #school {
+    height: 38px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 14px 12px;
+    outline: none;
+    border: 2px solid var(--gray);
+    transition: all 0.3s ease;
+    display: flex;
+  }
+
+  .registration-data__button {
+    position: relative;
+
+    mat-icon {
+      position: absolute;
+      right: 2px;
+      top: 10px;
+      color: var(--white);
+      font-size: 20px;
+    }
+
+    &:nth-child(1) {
+      mat-icon {
+
+        left: 7px;
+
+      }
+    }
+  }
+
+  .form-phone {
+    display: flex;
+
+    button {
+      border: none;
+      background: none;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      padding-top: 4px;
+      color: var(--gray-dark);
+      cursor: pointer;
+
+      &:nth-child(3) {
+        font-size: 17px;
+        padding-top: 8px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+}
+
+.add-button,
+.remove-button {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+app-input {
+  input {
+    width: 40vw;
+    min-width: 320px;
+
+    @media screen and (max-width: 626px) {
+      width: 53vw;
+    }
+  }
+}
+
+.form-contact {
+  width: 40vw;
+  min-width: 260px;
+  margin-right: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+}

@@ -1,0 +1,17 @@
+<div class="input-wrapper">
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    [required]="required"
+    [name]="name"
+    [pattern]="pattern"
+    [autocomplete]="autocomplete ? 'on' : 'off'"
+    (blur)="onBlur()"
+    [ngClass]="{
+      'ng-invalid': isInvalid && isTouched,
+      'ng-touched': isTouched
+    }"
+  />
+
+</div>

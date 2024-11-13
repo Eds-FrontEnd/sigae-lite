@@ -1,0 +1,88 @@
+<app-menubar></app-menubar>
+<app-timeline [active]="1"></app-timeline>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="form-info">
+    <div>
+      <app-input
+            id="fullName"
+            [placeholder]="'Nome Completo'"
+            [required]="true"
+            [name]="'username'"
+            [autocomplete]="true"
+            formControlName="fullName">
+      </app-input>
+      <div *ngIf="hasError('fullName', 'required')">
+        <p class="message-error">Nome é obrigatório</p>
+      </div>
+    </div>
+    <div>
+      <app-input
+            id="socialName"
+            [placeholder]="'Nome Social'"
+            [required]="true"
+            [name]="'username'"
+            [autocomplete]="true"
+            formControlName="socialName">
+      </app-input>
+      <div *ngIf="hasError('socialName', 'required')">
+        <p class="message-error">Nome Social é obrigatório</p>
+      </div>
+    </div>
+  </div>
+  <div class="registration-data__info">
+    <div>
+      <app-input
+            id="cpf"
+            [placeholder]="'CPF'"
+            [required]="true"
+            [name]="'username'"
+            [autocomplete]="true"
+            formControlName="cpf">
+      </app-input>
+      <div *ngIf="hasError('cpf', 'required')">
+        <p class="message-error">CPF é obrigatório</p>
+      </div>
+      <div *ngIf="hasError('cpf', 'invalidCpf')">
+        <p class="message-error">CPF inválido</p>
+      </div>
+    </div>
+    <div>
+      <app-input
+            id="cnpj"
+            [placeholder]="'CNPJ'"
+            [required]="true"
+            [name]="'username'"
+            [autocomplete]="true"
+            formControlName="cnpj">
+      </app-input>
+      <div *ngIf="hasError('cnpj', 'required')">
+        <p class="message-error">CNPJ é obrigatório</p>
+      </div>
+      <div *ngIf="hasError('cnpj', 'invalidCnpj')">
+        <p class="message-error">CNPJ inválido</p>
+      </div>
+    </div>
+     <div>
+       <select
+         id="school"
+         formControlName="school"
+         [ngClass]="{ 'input-error': hasError('school', 'required') }"
+       >
+         <option value="" disabled selected>Escola</option>
+         <option *ngFor="let escola of escolas" [value]="escola">{{ escola }}</option>
+       </select>
+       <span *ngIf="hasError('school', 'required')">
+         <p class="message-error">campo obrigatório.</p>
+       </span>
+     </div>
+    <span class="registration-data__button">
+      <app-button
+        [buttonText]="'Próximo'"
+        [buttonType]="'submit'"
+        [titleText]="'Clique para enviar o formulário'"
+      ></app-button>
+      <mat-icon>arrow_forward</mat-icon>
+    </span>
+  </div>
+</form>

@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #E5E7EB;
+  --gray-light: #f9fafb;
+  --gray-darkness: #4B5563;
+  --gray-dark: #6B7280;
+  --blue: #3B82F6;
+  --blue-dark: #116cfd;
+  --blue-light: #eff6ff;
+  --red: #ff0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  user-select: none;
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    min-width: 320px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.message-error{
+  color: var(--red);
+  font-size: 10px;
+  margin-top: -15px !important;
+}

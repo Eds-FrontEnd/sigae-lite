@@ -1,0 +1,7 @@
+<button
+  [type]="buttonType"
+  (click)="onClick()"
+  class="buttonDinamic"
+  [attr.aria-label]="titleText ? titleText : buttonText">
+  {{ buttonText }}
+</button>

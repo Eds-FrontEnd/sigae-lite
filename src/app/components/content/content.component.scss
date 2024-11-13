@@ -1,0 +1,29 @@
+.page-content{
+  display: flex;
+  justify-content: center;
+
+  h1{
+    position: absolute;
+    top: 150px;
+    font-size: 2rem;
+    color: var(--white);
+    z-index: 10;
+  }
+}
+
+#banner-home {
+  background-image: url(./../../components/images/banners/home.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 0;
+}

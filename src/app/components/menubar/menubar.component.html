@@ -1,0 +1,41 @@
+<header>
+  <nav class="menubar">
+    <mat-icon class="menu" *ngIf="isLoggedIn()" (click)="toggleMenu()">menu</mat-icon>
+    <a href="/" class="menubar--logo" title="logo Sigae Lite" alt="logo Sigae Lite">
+      <app-logo></app-logo>
+    </a>
+    <ul *ngIf="isLoggedIn()"
+        class="menubar--additional"
+        [ngClass]="{'menubar--additional': isMenuOpen, 'menubar--additional-closed': !isMenuOpen}">
+      <li>
+        <a href="/persons">
+          <mat-icon class="person">person_outline</mat-icon>
+          <span>Pessoas</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <mat-icon class="calendar">calendar_today</mat-icon>
+          <span>Agenda</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <mat-icon class="file">file_copy</mat-icon>
+          <span>Plano de Ação</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="menubar--login">
+      <li *ngIf="isLoggedIn()">
+        <a href="/" (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span class="quit">Quit</span>
+        </a>
+      </li>
+      <li *ngIf="!isLoggedIn()">
+        <a href="/login">Login</a>
+      </li>
+    </ul>
+  </nav>
+</header>

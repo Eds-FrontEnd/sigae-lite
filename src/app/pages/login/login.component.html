@@ -1,0 +1,63 @@
+<main>
+  <section class="page-login">
+    <article class="page-login__box">
+      <form (ngSubmit)="onSubmit()" method="POST">
+        <app-logo></app-logo>
+        <div class="page-login__inputs">
+          <!-- Campo de e-mail -->
+          <app-input
+            id="login-email"
+            [type]="'email'"
+            [placeholder]="'E-mail'"
+            [(ngModel)]="username"
+            [required]="true"
+            [name]="'username'"
+            [autocomplete]="true"
+            [ngClass]="{'ng-invalid': emailInvalido, 'ng-touched': username && username !== ''}"
+            (blur)="validarEmail()"> <!-- Mudamos aqui para chamar apenas validarEmail() -->
+          </app-input>
+
+          <!-- Campo de senha -->
+          <app-input
+            id="login-password"
+            #passwordInput
+            [type]="isPasswordVisible ? 'text' : 'password'"
+            [placeholder]="'Senha'"
+            [(ngModel)]="password"
+            [required]="true"
+            [name]="'password'"
+            [autocomplete]="true"
+            [ngClass]="{'ng-invalid': senhaInvalida, 'ng-touched': password && password !== ''}"
+            (blur)="validarSenha()">
+          </app-input>
+
+          <mat-icon (click)="togglePasswordVisibility()">
+            {{ isPasswordVisible ? 'visibility' : 'visibility_off' }}
+          </mat-icon>
+
+          <app-button
+            [buttonText]="'Entrar'"
+            [buttonType]="'submit'"
+            [titleText]="'Clique para enviar o formulário'">
+          </app-button>
+        </div>
+      </form>
+
+      <!-- Exibe o reCAPTCHA de soma somente após o usuário terminar de digitar o email -->
+      <div *ngIf="showRecaptcha" id="recaptcha-sum">
+        <label for="captcha">Qual é a soma de {{ captcha.num1 }} + {{ captcha.num2 }} ?</label>
+        <input
+          [(ngModel)]="captchaAnswer"
+          id="captcha"
+          type="string"
+          placeholder="Digite a soma"
+          required
+          (input)="checkCaptchaAnswer()"
+        />
+        <div *ngIf="captchaIncorrect" class="error-message">
+          <span>Ops! Tente novamente...</span>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>

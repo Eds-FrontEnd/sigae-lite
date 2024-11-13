@@ -1,0 +1,78 @@
+<app-menubar></app-menubar>
+<app-timeline [active]="3"></app-timeline>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+  <div class="registration-address__fields">
+   <div class="input-address">
+     <!-- Endereço Completo -->
+     <app-input
+       id="address"
+       [placeholder]="'Endereço Completo'"
+       [required]="true"
+       formControlName="address">
+     </app-input>
+     <div *ngIf="hasError('address', 'required')">
+       <p class="message-error">Endereço é obrigatório</p>
+     </div>
+
+     <!-- Cidade -->
+     <app-input
+       id="city"
+       [placeholder]="'Cidade'"
+       [required]="true"
+       formControlName="city">
+     </app-input>
+     <div *ngIf="hasError('city', 'required')">
+       <p class="message-error">Cidade é obrigatória</p>
+     </div>
+   </div>
+   <div class="input-address-info">
+    <app-input
+      id="cep"
+      [placeholder]="'CEP'"
+      [required]="true"
+      formControlName="cep">
+    </app-input>
+    <div *ngIf="hasError('cep', 'required')">
+      <p class="message-error">CEP é obrigatório</p>
+    </div>
+    <app-input
+      id="state"
+      [placeholder]="'Estado'"
+      [required]="true"
+      formControlName="state">
+    </app-input>
+    <div *ngIf="hasError('state', 'required')">
+      <p class="message-error">Estado é obrigatório</p>
+    </div>
+    <app-input
+      id="country"
+      [placeholder]="'País'"
+      [required]="true"
+      formControlName="country">
+    </app-input>
+    <div *ngIf="hasError('country', 'required')">
+      <p class="message-error">País é obrigatório</p>
+    </div>
+  </div>
+  <div class="form-buttons">
+    <a [routerLink]="'/registration-contact'" class="registration-data__button">
+      <app-button
+        [buttonText]="'Anterior'"
+        [buttonType]="'button'"
+        [titleText]="'Voltar a página anterior'">
+      </app-button>
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+    <span class="registration-data__button">
+      <app-button
+        [buttonText]="'Próximo'"
+        [buttonType]="'submit'"
+        [titleText]="'Clique para enviar o formulário'">
+      </app-button>
+      <mat-icon>arrow_forward</mat-icon>
+    </span>
+  </div>
+  </div>
+</form>

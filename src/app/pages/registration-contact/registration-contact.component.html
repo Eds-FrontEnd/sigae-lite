@@ -1,0 +1,53 @@
+<app-menubar></app-menubar>
+<app-timeline [active]="2"></app-timeline>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="input-contact">
+    <div>
+      <app-input
+            id="contactEmail"
+            [placeholder]="'E-mail'"
+            [required]="true"
+            [name]="'email'"
+            [autocomplete]="true"
+            formControlName="contactEmail">
+      </app-input>
+      <div *ngIf="hasError('contactEmail', 'required')">
+        <p class="message-error">E-mail é obrigatório</p>
+      </div>
+    </div>
+    <div formArrayName="contactPhones">
+      <div *ngFor="let phone of contactPhones.controls; let i = index" [formGroupName]="i" class="form-phone">
+        <input
+          formControlName="contactPhone"
+          [ngClass]="{ 'input-error': hasError('contactPhone', 'required') }"
+          placeholder="Telefone {{ i + 1 }}"
+          class="form-contact">
+        <div *ngIf="hasError('contactPhone', 'required')">
+          <p class="message-error">Telefone é obrigatório</p>
+        </div>
+        <button type="button" (click)="addPhone()">+</button>
+        <button *ngIf="i > 0" type="button" (click)="removePhone(i)">X</button>
+      </div>
+    </div>
+  </div>
+
+<div class="form-buttons">
+  <a [routerLink]="'/registration-data'" class="registration-data__button">
+    <app-button
+      [buttonText]="'Anterior'"
+      [buttonType]="'button'"
+      [titleText]="'Voltar a página anterior'">
+    </app-button>
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+  <span class="registration-data__button">
+    <app-button
+      [buttonText]="'Próximo'"
+      [buttonType]="'submit'"
+      [titleText]="'Clique para enviar o formulário'">
+    </app-button>
+    <mat-icon>arrow_forward</mat-icon>
+  </span>
+</div>
+</form>

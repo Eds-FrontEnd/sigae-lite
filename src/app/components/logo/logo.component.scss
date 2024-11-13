@@ -1,0 +1,16 @@
+.logo-img {
+  background-image: url(./../../components/images/icons/logo_home.jpg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  border: none; /* Remove qualquer borda */
+  outline: none; /* Remove qualquer contorno (outline) */
+  padding: 14px;
+}

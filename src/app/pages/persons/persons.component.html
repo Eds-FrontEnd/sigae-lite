@@ -1,0 +1,43 @@
+<app-menubar></app-menubar>
+
+<main>
+  <section class="persons">
+    <app-button
+      [buttonText]="'Adicionar'"
+      [buttonType]="'submit'"
+      [titleText]="'Clique para enviar o formulário'"
+      (buttonClick)="addPerson()"
+      class="buttonAddPerson">
+    </app-button>
+
+    <h1 class="person-title">Pessoas</h1>
+    <table class="person-title second">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>E-mail</th>
+          <th>Escola</th>
+          <th>Endereço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+    </table>
+
+    <table class="person-title third">
+      <tbody>
+        <tr *ngFor="let person of personsList">
+          <td>{{ person.fullName }}</td>
+          <td>{{ person.cpf }}</td>
+          <td>{{ person.contactEmail }}</td>
+          <td>{{ person.school }}</td>
+          <td>{{ person.address }}</td>
+          <td>
+            <mat-icon class="edit-person" (click)="editPerson(person.id)">edit_outline</mat-icon>
+            <mat-icon class="delete-person" (click)="confirmDelete(person.id)">delete_outline</mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>

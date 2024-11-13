@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>Editar Cadastro</h2>
+
+<mat-dialog-content>
+  <form class="modal-edit-form">
+    <!-- Campo para Nome -->
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="person.fullName" name="fullName" required />
+    </mat-form-field>
+
+    <!-- Campo para CPF -->
+    <mat-form-field appearance="fill">
+      <mat-label>CPF</mat-label>
+      <input matInput [(ngModel)]="person.cpf" name="cpf" required />
+    </mat-form-field>
+
+    <!-- Campo para E-mail -->
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input matInput [(ngModel)]="person.contactEmail" name="contactEmail" required />
+    </mat-form-field>
+
+    <!-- Campo para Escola (com select) -->
+    <mat-form-field appearance="fill">
+      <mat-label>Escola</mat-label>
+      <mat-select [(ngModel)]="person.school" name="school" required>
+        <mat-option value="Municipal">Municipal</mat-option>
+        <mat-option value="Estadual">Estadual</mat-option>
+        <mat-option value="Particular">Particular</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Campo para Endereço -->
+    <mat-form-field appearance="fill">
+      <mat-label>Endereço</mat-label>
+      <input matInput [(ngModel)]="person.address" name="address" required />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <app-button
+      [buttonText]="'Cancelar'"
+      [buttonType]="'button'"
+      [titleText]="'Cancelar'"
+      (click)="onNoClick()"
+      >
+  </app-button>
+  <app-button
+      [buttonText]="'Salvar'"
+      [buttonType]="'button'"
+      [titleText]="'Salvar'"
+      (click)="saveChanges()"
+      >
+  </app-button>
+</mat-dialog-actions>

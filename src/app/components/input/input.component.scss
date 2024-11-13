@@ -1,0 +1,40 @@
+input, form-group {
+  height: 38px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 14px 12px;
+  outline: none;
+  border: 2px solid var(--gray);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--blue);
+}
+
+
+.input-wrapper {
+  position: relative;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid var(--red);
+}
+
+input.ng-touched {
+  background-color: var(--blue-light);
+}
+
+.error-message {
+  color: var(--red);
+  font-size: 9px;
+  position: absolute;
+  top: 26px;
+  left: 4px;
+  margin-top: 5px;
+  visibility: hidden;
+}
+
+input.ng-invalid.ng-touched~.error-message {
+  visibility: visible;
+}

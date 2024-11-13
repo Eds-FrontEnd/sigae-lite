@@ -1,0 +1,10 @@
+<section class="timeline">
+  <article *ngFor="let etapa of etapas; let i = index">
+    <header>
+      <span [class.active]="active === (i + 1)">{{ i + 1 }}</span>
+      <h2 [ngClass]="{ 'strong-color': active === (i + 1), 'weak-color': active !== (i + 1) }">
+        {{ etapa }}
+      </h2>
+    </header>
+  </article>
+</section>
