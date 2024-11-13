@@ -27,4 +27,11 @@ Antes de começar, certifique-se de ter o Node.js e o npm instalados em seu ambi
    ```bash
    ng serve
 
+## Teste de Login
+
+Para testar a funcionalidade de login no aplicativo, utilize as seguintes credenciais:
+
+- **Email**: `teste@teste.com.br`
+- **Senha**: `Sigae/Lite50`
+
 <img src="src/app/components/images/readme/readme.jpg" />
