@@ -5,55 +5,62 @@
 
   <div class="registration-address__fields">
    <div class="input-address">
-     <!-- Endereço Completo -->
-     <app-input
-       id="address"
-       [placeholder]="'Endereço Completo'"
-       [required]="true"
-       formControlName="address">
-     </app-input>
-     <div *ngIf="hasError('address', 'required')">
-       <p class="message-error">Endereço é obrigatório</p>
-     </div>
-
-     <!-- Cidade -->
-     <app-input
-       id="city"
-       [placeholder]="'Cidade'"
-       [required]="true"
-       formControlName="city">
-     </app-input>
-     <div *ngIf="hasError('city', 'required')">
-       <p class="message-error">Cidade é obrigatória</p>
-     </div>
+      <div>
+        <app-input
+          id="address"
+          [placeholder]="'Endereço Completo'"
+          [required]="true"
+          formControlName="address">
+        </app-input>
+        <div *ngIf="hasError('address', 'required')">
+          <p class="message-error">Endereço é obrigatório</p>
+        </div>
+      </div>
+      <div>
+        <app-input
+          id="city"
+          [placeholder]="'Cidade'"
+          [required]="true"
+          formControlName="city">
+        </app-input>
+        <div *ngIf="hasError('city', 'required')">
+          <p class="message-error">Cidade é obrigatória</p>
+        </div>
+      </div>
    </div>
    <div class="input-address-info">
-    <app-input
-      id="cep"
-      [placeholder]="'CEP'"
-      [required]="true"
-      formControlName="cep">
-    </app-input>
-    <div *ngIf="hasError('cep', 'required')">
-      <p class="message-error">CEP é obrigatório</p>
+    <div>
+      <app-input
+        id="cep"
+        [placeholder]="'CEP'"
+        [required]="true"
+        formControlName="cep">
+      </app-input>
+      <div *ngIf="hasError('cep', 'required')">
+        <p class="message-error">CEP é obrigatório</p>
+      </div>
     </div>
-    <app-input
-      id="state"
-      [placeholder]="'Estado'"
-      [required]="true"
-      formControlName="state">
-    </app-input>
-    <div *ngIf="hasError('state', 'required')">
-      <p class="message-error">Estado é obrigatório</p>
+    <div>
+      <app-input
+        id="state"
+        [placeholder]="'Estado'"
+        [required]="true"
+        formControlName="state">
+      </app-input>
+      <div *ngIf="hasError('state', 'required')">
+        <p class="message-error">Estado é obrigatório</p>
+      </div>
     </div>
-    <app-input
-      id="country"
-      [placeholder]="'País'"
-      [required]="true"
-      formControlName="country">
-    </app-input>
-    <div *ngIf="hasError('country', 'required')">
-      <p class="message-error">País é obrigatório</p>
+    <div>
+      <app-input
+        id="country"
+        [placeholder]="'País'"
+        [required]="true"
+        formControlName="country">
+      </app-input>
+      <div *ngIf="hasError('country', 'required')">
+        <p class="message-error">País é obrigatório</p>
+      </div>
     </div>
   </div>
   <div class="form-buttons">
